@@ -77,3 +77,30 @@ rustup target add wasm32-unknown-unknown
 
 # Install Soroban CLI
 cargo install --locked soroban-cli
+```
+
+### Testnet invoke scripts
+
+Use `scripts/testnet-invoke.sh` for repeatable Testnet calls against the
+`aid_escrow` contract. The script loads `CONTRACT_ID`, `SOURCE_ACCOUNT`,
+`SECRET_KEY`, `DEPLOYER_SECRET_KEY`, and `TESTNET_RPC_URL` from `.env`, and
+also accepts those values as flags. Secrets are redacted in the printed command.
+
+```bash
+# Initialize the deployed contract.
+./scripts/testnet-invoke.sh initialize --admin GADMIN...
+
+# Create a package.
+./scripts/testnet-invoke.sh create-package \
+  --operator GADMIN... \
+  --id 1 \
+  --recipient GRECIPIENT... \
+  --amount 10000000 \
+  --token CTOKEN...
+
+# Claim and inspect package state.
+./scripts/testnet-invoke.sh claim --id 1
+./scripts/testnet-invoke.sh get-package --id 1
+./scripts/testnet-invoke.sh view-status --id 1
+./scripts/testnet-invoke.sh get-aggregates --token CTOKEN...
+```
