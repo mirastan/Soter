@@ -8,6 +8,7 @@
     "test": "pnpm -r test"
   },
   "devDependencies": {
+    "@eslint-community/eslint-utils": "^4.9.1",
     "@prisma/client": "^7.4.1",
     "@types/express": "^5.0.6",
     "@types/node": "^25.9.1",

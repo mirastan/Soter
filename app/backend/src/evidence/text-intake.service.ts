@@ -142,7 +142,7 @@ Only detect from these languages: en, es, fr, ar, ru, zh, pt, de, ja, ko, hi, id
     }
 
     return this.fallbackLanguageDetection(text);
-}
+  }
 
   private fallbackLanguageDetection(text: string): DetectedLanguage {
     const languagePatterns: Record<SupportedLanguage, RegExp[]> = {
