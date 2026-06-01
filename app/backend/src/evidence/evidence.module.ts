@@ -11,16 +11,9 @@ import { TextIntakeService } from './text-intake.service';
 import { ConfigModule } from '@nestjs/config';
 
 @Module({
-<<<<<<< HEAD
   imports: [ConfigModule, PrismaModule, EncryptionModule, AuditModule],
   controllers: [EvidenceController],
   providers: [EvidenceService, FingerprintService, TextIntakeService],
   exports: [EvidenceService, FingerprintService, TextIntakeService],
-=======
-  imports: [PrismaModule, EncryptionModule, AuditModule],
-  controllers: [EvidenceController, UploadSessionController],
-  providers: [EvidenceService, FingerprintService, UploadSessionService],
-  exports: [FingerprintService],
->>>>>>> 47c3beb8c98eacf70635226208f58e06ad7bea39
 })
 export class EvidenceModule {}
